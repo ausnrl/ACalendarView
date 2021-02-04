@@ -12,12 +12,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         findViewById<ACalendarView>(R.id.calendarview).apply {
-            setDate(2021, 1, 1)
+            setDate(2021, 0, 1)
             setVerticalLineVisibility(true)
             for(i in 0..10) {
-                drawAdd(DrawPosition().drawImage(DrawPosition.StartDraw.UNDER_DATE, YMD(2021, 2, i), R.drawable.ic_sample,0f, 0f, true))
+                drawAdd(DrawPosition().drawImage(DrawPosition.StartDraw.UNDER_DATE, YMD(2021, 1, i), R.drawable.ic_sample,0f, 0f, true))
             }
             callback{i, j->
                 Log.d("CAL", "year : ${getYear(i, j)} , month : ${getMonth(i, j)} , day : ${getDay(i, j)}")
